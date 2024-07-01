@@ -45,11 +45,10 @@ export const remove = async (req, res) => {
 }
 
 export const edit = async (req, res) => {
-    const { username } = req.body
     const { email } = req.params
 
     // find and update
-    const mail = await Mail.findOneAndUpdate({ email }, { username }, {
+    const mail = await Mail.findOneAndUpdate({ email }, req.body, {
         returnOriginal: false
     })
 
