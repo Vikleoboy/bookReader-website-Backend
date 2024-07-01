@@ -11,6 +11,13 @@ const mailSchema = new Schema({
         trim: true,
         unique: [true, "Email already exists in the mailing list"]
     },
+    role: {
+        type: String,
+        lowercase: true,
+        trim: true,
+        enum: ["user", "dev"],
+        default: "user"
+    }
 })
 
 export default model("Mail", mailSchema)
