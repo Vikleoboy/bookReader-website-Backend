@@ -19,6 +19,12 @@ app.use(helmet())
 // routers
 app.use("/mail", mailRouter)
 
+app.all("*", (req, res) => {
+    res.status(404).json({
+        message: "route not found"
+    })
+})
+
 // error handeling
 app.use((err, req, res, next) => {
     // print error stack if app isnt in production
