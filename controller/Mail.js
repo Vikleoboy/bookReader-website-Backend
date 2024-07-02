@@ -14,10 +14,10 @@ export const get = async (req, res) => {
 
 export const post = async (req, res) => {
     // get data from body
-    const { username, email } = req.body
+    const { username, email, role } = req.body
 
     // create new email
-    const mail = new Mail({ username, email })
+    const mail = new Mail({ username, email, role })
     await mail.save()
 
     // return created data

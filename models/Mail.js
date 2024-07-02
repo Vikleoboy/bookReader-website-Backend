@@ -15,7 +15,7 @@ const mailSchema = new Schema({
         type: String,
         lowercase: true,
         trim: true,
-        enum: ["user", "dev"],
+        enum: ["user", "tester"],
         default: "user"
     }
 })
