@@ -2,6 +2,7 @@ import express from "express"
 import mongoose from "mongoose"
 import mailRouter from "./routers/Mail.js"
 import authRouter from "./routers/Auth.js"
+import userRouter from "./routers/User.js"
 import helmet from "helmet"
 import cors from "cors"
 
@@ -20,6 +21,7 @@ app.use(helmet())
 // routers
 app.use("/mail", mailRouter)
 app.use("/auth", authRouter)
+app.use("/user", userRouter)
 
 app.all("*", (req, res) => {
     res.status(404).json({
